@@ -1,0 +1,16 @@
+{
+    "requires": ["bare-metal","drivers-usb","events"],
+    "config": {
+        "usb_speed": {
+            "help": "USE_USB_OTG_FS or USE_USB_OTG_HS or USE_USB_HS_IN_FS",
+            "value": "USE_USB_OTG_FS"
+        }
+    },
+    "target_overrides":{
+        "NUCLEO_F103RB": {
+            "target.clock_source": "USE_PLL_HSE_XTAL",
+            "target.clock_source_usb": "1",
+            "target.device_has_add": ["USBDEVICE"]
+        }
+    }
+}
